@@ -76,8 +76,7 @@ JOIN dim_product p
 JOIN total_cost as tc
     ON fmc.manufacturing_cost IN (tc.max_cost, tc.min_cost);
 
--- 6. A report which contains top 5 customers who received an average high pre_invoice_discount_pct 
-   for the fiscal_year 2021 and in the Indian market
+-- 6. A report which contains top 5 customers who received an average high pre_invoice_discount_pct for the fiscal_year 2021 and in the Indian market
 
 select d.customer_code,c.customer,
 concat(round(avg(d.pre_invoice_discount_pct)*100,2),"%") as average_discount_percentage
